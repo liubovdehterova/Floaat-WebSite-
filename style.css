@@ -1,0 +1,431 @@
+@font-face {
+    font-family: 'Archivo-Medium';
+    src: url('./fonts/Archivo-Medium.ttf'),
+    url('./fonts/Archivo-Medium.eot') format('embedded-opentype'),
+    url('./fonts/Archivo-Medium.woff2') format('woff2'),
+    url('./fonts/Archivo-Medium.woff') format('woff'),
+    url('./fonts/Archivo-Medium.svg#Archivo-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Archivo-Black';
+    src: url('./fonts/Archivo-Black.ttf'),
+    url('./fonts/Archivo-Black.eot') format('embedded-opentype'),
+    url('./fonts/Archivo-Black.woff2') format('woff2'),
+    url('./fonts/Archivo-Black.woff') format('woff'),
+    url('./fonts/Archivo-Black.svg#Archivo-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Archivo-Bold';
+    src: url('./fonts/Archivo-Bold.ttf'),
+    url('./fonts/Archivo-Bold.eot') format('embedded-opentype'),
+    url('./fonts/Archivo-Bold.woff2') format('woff2'),
+    url('./fonts/Archivo-Bold.woff') format('woff'),
+    url('./fonts/Archivo-Bold.svg#Archivo-Bold') format('svg');
+}
+
+@font-face {
+    font-family: 'Archivo-Regular';
+    src: url('./fonts/Archivo-Regular.ttf'),
+    url('./fonts/Archivo-Regular.eot') format('embedded-opentype'),
+    url('./fonts/Archivo-Regular.woff2') format('woff2'),
+    url('./fonts/Archivo-Regular.woff') format('woff'),
+    url('./fonts/Archivo-Regular.svg#Archivo-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    cursor: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    max-width: 1310px;
+    margin: 0 auto;
+
+}
+.header {
+    background: #170119;
+    cursor: none;
+    overflow: hidden;
+    height: 100vh;
+}
+.header .container {
+    background: radial-gradient(45.53% 45.64% at 50% 50%, rgba(255, 125, 150, 0.287806) 0%, rgba(245, 64, 137, 4e-05) 100%);
+}
+.pointed {
+    width: 7.5px;
+    height: 7.5px;
+    background: #D2132A;
+    mix-blend-mode: normal;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    animation: 200ms widthStartPointer;
+}
+@keyframes widthStartPointer {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    100% {
+        width: 7.5px;
+        height: 7.5px;
+    }
+}
+.pointer__logo {
+    background: #FFEFF6;
+    width: 20px;
+    height: 20px;
+    animation: 200ms widthLogo;
+}
+@keyframes widthLogo {
+    0% {
+        width: 7.5px;
+        height: 7.5px;
+    }
+    100% {
+        width: 20px;
+        height: 20px;
+    }
+}
+.pointer__contacts,
+.pointer__dot {
+    width: 70px;
+    height: 70px;
+    left: -15px;
+    animation: 200ms contactsAndDots;
+}
+
+.pointer__contacts:after,
+.pointer__dot:after {
+    content: 'contact';
+    position: absolute;
+    height: auto;
+    text-transform: uppercase;
+    color: #ffffff;
+    top: 30px;
+    left: 15px;
+    font-size: 9px;
+    font-family: 'Archivo-Regular', serif;
+    animation: 200ms contactsAndDots;
+}
+@keyframes contactsAndDots {
+    0% {
+        width: 7.5px;
+        height: 7.5px;
+        opacity: 0;
+    }
+    100% {
+        width: 70px;
+        height: 70px;
+        opacity: 1;
+    }
+}
+.pointer__dot:after {
+    content: 'open';
+    top: 30px;
+    left: 20px;
+}
+.rounded {
+    display: block;
+    background: radial-gradient(51.53% 51.64% at 50% 50%, rgba(255, 125, 150, 0.2) -5%, rgba(245, 64, 137, 4e-05) 97%);
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    top: -400px;
+    left: -400px;
+    z-index: 0;
+}
+.rounded__logo {
+    width: 150px;
+    height: 150px;
+    top: -65px;
+    left: -65px;
+}
+.rounded__contacts {
+    width: 200px;
+    height: 200px;
+    top: -70px;
+    left: -70px;
+}
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__top__logo__link {
+    display: block;
+    cursor: none;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 39px 0 0 0;
+}
+.header__top__contacts {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+.header__top__contacts__link {
+    font-family: 'Archivo-Bold', serif;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #FFEFF6;
+    margin-right: 22px;
+    cursor: none;
+    display: block;
+    padding: 39px 0 0 0;
+}
+.header__top__contacts__dot {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: none;
+    padding: 39px 0 0 0;
+}
+.header__top__contacts__dot span {
+    display: block;
+    width: 7.5px;
+    height: 7.5px;
+    background: #D2132A;
+    border-radius: 50%;
+}
+.header__main {
+    position: relative;
+}
+.header__main__img {
+    display: inline-block;
+}
+.header__main__img img {
+    position: relative;
+}
+.headphone {
+    margin-left: 179px;
+    position: relative;
+    top: 70px;
+}
+.headphone img {
+    animation: 6s linear infinite running headphone;
+}
+@keyframes headphone {
+    0% {
+        top: 0;
+        right: 0;
+    }
+    50% {
+        top: 25px;
+        right: 25px;
+    }
+    100% {
+        top: 0;
+        right: 0;
+    }
+}
+.torus3 {
+    margin-left: 352px;
+}
+.torus3 img {
+    animation: 5s linear 1s infinite running torus3;
+}
+@keyframes torus3 {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 40px;
+    }
+    100% {
+        top: 0;
+    }
+}
+.youtube {
+    margin-left: 157px;
+}
+.youtube img {
+    animation: 5s linear infinite running youtube;
+}
+@keyframes youtube {
+    0% {
+        top: 0;
+        right: 0;
+    }
+    50% {
+        top: 15px;
+        right: 40px;
+    }
+    100% {
+        top: 0;
+        right: 0;
+    }
+}
+
+.camera {
+    margin-top: 135px;
+    margin-left: 45px;
+}
+.camera img {
+    animation: 6s linear infinite running camera;
+}
+@keyframes camera {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 25px;
+    }
+    100% {
+        top: 0;
+    }
+}
+.note {
+    margin-right: 44px;
+}
+.note img {
+    animation: 5s linear infinite running note;
+}
+@keyframes note {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 25px;
+        left: 0;
+    }
+    75% {
+        left: -15px;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+.claqueta {
+    float: right;
+    margin-top: 140px;
+    margin-right: 72px;
+}
+.claqueta img {
+    animation: 5s linear infinite running claqueta;
+}
+@keyframes claqueta {
+    0% {
+        right: 0;
+    }
+    50% {
+        right: 25px;
+    }
+    100% {
+        right: 0;
+    }
+}
+.torus {
+    float: right;
+    margin-top: 330px;
+    margin-right: -260px;
+}
+.torus img {
+    animation: 4s linear infinite running torus;
+}
+@keyframes torus {
+    0% {
+        bottom: 0;
+        left: 0;
+    }
+    50% {
+        bottom: 35px;
+    }
+    75% {
+        left: 15px;
+    }
+    100% {
+        bottom: 0;
+        left: 0;
+    }
+}
+.header__main__text {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    perspective: 30em;
+    background: rgba(210, 19, 42, 0);
+}
+.header__main__text__subtitle {
+    font-family: 'Archivo-Regular', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 13px;
+    text-transform: uppercase;
+    color: #F9A608;
+    text-align: center;
+    margin: 0;
+}
+.header__main__text__title {
+    text-align: center;
+    font-family: 'Archivo-Black', serif;
+    font-size: 170px;
+    line-height: 199px;
+    text-transform: uppercase;
+    color: #FFEFF6;
+    margin: 0;
+}
+.header__main__text__animation {
+    position: relative;
+}
+.header__main__text__animation:after {
+    content: '';
+    display: block;
+    background: url("img/lettering.svg") center center no-repeat;
+    background-size: contain;
+    width: 720px;
+    height: 274px;
+    position: absolute;
+    top: 60px;
+    left: 25%;
+}
+.header__main__footer {
+    text-align: center;
+    color: #F6F6F6;
+    text-transform: uppercase;
+    padding-bottom: 54px;
+}
+.header__main__footer__subtitle {
+    color: #643C5A;
+    font-size: 14px;
+    line-height: 15px;
+    font-family: 'Archivo-Regular', serif;
+    margin-bottom: 0;
+}
+.header__main__footer__viewers-count {
+    font-size: 30px;
+    line-height: 33px;
+    font-family: 'Archivo-Bold', serif;
+}
+.header__main__footer__viewer {
+    font-family: 'Archivo-Regular', serif;
+    font-size: 14px;
+    line-height: 15px;
+}
