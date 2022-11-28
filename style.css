@@ -758,10 +758,26 @@ a {
     display: block;
     margin: 0 auto;
 }
-.menu__main__item__inner__blocks__img.active {
+.menu__main__item__inner__blocks__img-active {
     display: none;
 }
 .menu__main__item__inner__blocks.active {
     background: linear-gradient(318.4deg, #B10217 8.31%, #DD041F 69.98%);
     border-radius: 12px;
+}
+
+.menu__main__item__inner__blocks:hover {
+    background: linear-gradient(318.4deg, #B10217 8.31%, #DD041F 69.98%);
+    border-radius: 12px;
+}
+.menu__main__item__inner__blocks:hover .menu__main__item__inner__blocks__img {
+    display: none;
+}
+.menu__main__item__inner__blocks.active .menu__main__item__inner__blocks__img {
+    display: none;
+}
+
+.menu__main__item__inner__blocks:hover .menu__main__item__inner__blocks__img-active,
+.menu__main__item__inner__blocks.active .menu__main__item__inner__blocks__img-active {
+    display: block;
 }

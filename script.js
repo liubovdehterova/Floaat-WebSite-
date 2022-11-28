@@ -1,10 +1,12 @@
 const cursorPointed = document.querySelector('.pointed');
 const cursorRounded = document.querySelector('.rounded');
-const headerLogo = document.querySelectorAll('.header__top__logo');
+const headerLogo = document.querySelector('.header__top__logo--pointer');
 const headerTopContactsLink = document.querySelectorAll('.header__top__contacts__link');
 const headerTopContactsLinkDot = document.querySelectorAll('.header__top__contacts__dot');
 const headerMainText = document.querySelector('.header__main__text__animation');
 const clientsCard = document.querySelectorAll('.clients__info__main__card');
+const menuMainItemBlocks = document.querySelector('.menu__main__item__flex');
+const menuMainItemBlocksInner = document.querySelectorAll('.menu__main__item__inner__blocks');
 
 const moveCursor = (e) => {
     const mouseY = e.pageY;
@@ -23,6 +25,7 @@ function addClassPointerLogo(e) {
         cursorRounded.classList.remove('rounded__logo');
     }
 }
+
 headerLogo.onmouseover = headerLogo.onmouseout = addClassPointerLogo;
 
 clientsCard.forEach((e) => {
@@ -38,6 +41,7 @@ function addClassPointerContacts(e) {
         cursorRounded.classList.remove('rounded__contacts');
     }
 }
+
 headerTopContactsLink.forEach((e) => {
     e.onmouseover = e.onmouseout = addClassPointerContacts;
 });
@@ -52,6 +56,7 @@ function addClassPointerDot(e) {
         cursorRounded.classList.remove('rounded__contacts');
     }
 }
+
 headerTopContactsLinkDot.forEach((e) => {
     e.onmouseover = e.onmouseout = addClassPointerDot;
 });
@@ -90,3 +95,12 @@ window.addEventListener("mousemove", headerMainTextAnimation);
             .addTo(controller);
     }
 })();
+
+function menuMainItemBlocksEdition(e) {
+    menuMainItemBlocksInner.forEach(e => {
+        e.classList.remove('active');
+    });
+    e.target.classList.add('active');
+}
+
+menuMainItemBlocks.addEventListener('click', menuMainItemBlocksEdition);
