@@ -781,3 +781,41 @@ a {
 .menu__main__item__inner__blocks.active .menu__main__item__inner__blocks__img-active {
     display: block;
 }
+.menu__main__item__information {
+    background: radial-gradient(33.5% 27.76% at 50% 50%, rgba(255, 125, 150, 0.287806) 0%, rgba(245, 64, 137, 4e-05) 100%);
+    mix-blend-mode: normal;
+}
+/*.menu__main__item__information__inner {*/
+/*    padding: 170px 0;*/
+/*}*/
+
+.menu__main__item__information__inner.gear {
+    background: url("icons/gear2.svg") center center no-repeat;
+    background-size: cover;
+    filter: drop-shadow(-15px 10px 20px rgba(20, 4, 24, 0.400514));
+    padding: 170px 0;
+    display: none;
+}
+.menu__main__item__information__inner__title {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Archivo-Bold', serif;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 46px;
+    width: 55%;
+    margin: 0 auto;
+}
+.menu__main__item__information__inner__link {
+    font-family: 'Archivo-Black', serif;
+    font-size: 12px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.428571px;
+    text-transform: uppercase;
+    color: #D2132A;
+    display: block;
+}
+.menu__main__item__information__inner.gear.block__active {
+    display: block;
+}

@@ -97,8 +97,15 @@ window.addEventListener("mousemove", headerMainTextAnimation);
 })();
 
 function menuMainItemBlocksEdition(e) {
+    const gear = document.querySelector('.menu__main__item__information__inner.gear');
     menuMainItemBlocksInner.forEach(e => {
         e.classList.remove('active');
+        switch(e.className) {
+            case 'menu__main__item__inner__blocks gear':
+                gear.classList.add('block__active');
+                break;
+
+        }
     });
     e.target.classList.add('active');
 }
