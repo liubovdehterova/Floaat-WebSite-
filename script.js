@@ -7,6 +7,9 @@ const headerMainText = document.querySelector('.header__main__text__animation');
 const clientsCard = document.querySelectorAll('.clients__info__main__card');
 const menuMainItemBlocks = document.querySelector('.menu__main__item__flex');
 const menuMainItemBlocksInner = document.querySelectorAll('.menu__main__item__inner__blocks');
+const menuMainItem = document.querySelectorAll('.menu__main__item__inner');
+const sliderItem = document.querySelectorAll('.slider-item');
+const footerContact = document.querySelector('.footer__contact');
 
 const moveCursor = (e) => {
     const mouseY = e.pageY;
@@ -27,8 +30,14 @@ function addClassPointerLogo(e) {
 }
 
 headerLogo.onmouseover = headerLogo.onmouseout = addClassPointerLogo;
-
+footerContact.onmouseover = footerContact.onmouseout = addClassPointerLogo;
+menuMainItem.forEach((e) => {
+    e.onmouseover = e.onmouseout = addClassPointerLogo;
+})
 clientsCard.forEach((e) => {
+    e.onmouseover = e.onmouseout = addClassPointerLogo;
+});
+sliderItem.forEach((e) => {
     e.onmouseover = e.onmouseout = addClassPointerLogo;
 });
 
@@ -98,16 +107,103 @@ window.addEventListener("mousemove", headerMainTextAnimation);
 
 function menuMainItemBlocksEdition(e) {
     const gear = document.querySelector('.menu__main__item__information__inner.gear');
+    const star = document.querySelector('.menu__main__item__information__inner.star');
+    const graphik = document.querySelector('.menu__main__item__information__inner.graphik');
+    const claqueta = document.querySelector('.menu__main__item__information__inner.claqueta-menu');
+    const lupa = document.querySelector('.menu__main__item__information__inner.lupa');
+    const headphone = document.querySelector('.menu__main__item__information__inner.headphone-menu');
+
     menuMainItemBlocksInner.forEach(e => {
         e.classList.remove('active');
-        switch(e.className) {
-            case 'menu__main__item__inner__blocks gear':
-                gear.classList.add('block__active');
-                break;
-
-        }
     });
+    switch(e.target.className) {
+        case 'menu__main__item__inner__blocks gear':
+            star.classList.remove('block__active');
+            graphik.classList.remove('block__active');
+            claqueta.classList.remove('block__active');
+            lupa.classList.remove('block__active');
+            headphone.classList.remove('block__active');
+            gear.classList.add('block__active');
+            break;
+        case 'menu__main__item__inner__blocks star':
+            gear.classList.remove('block__active');
+            graphik.classList.remove('block__active');
+            claqueta.classList.remove('block__active');
+            lupa.classList.remove('block__active');
+            headphone.classList.remove('block__active');
+            star.classList.add('block__active');
+            break;
+        case 'menu__main__item__inner__blocks graphik':
+            gear.classList.remove('block__active');
+            star.classList.remove('block__active');
+            claqueta.classList.remove('block__active');
+            lupa.classList.remove('block__active');
+            headphone.classList.remove('block__active');
+            graphik.classList.add('block__active');
+            break;
+        case 'menu__main__item__inner__blocks claqueta-menu':
+            gear.classList.remove('block__active');
+            star.classList.remove('block__active');
+            graphik.classList.remove('block__active');
+            lupa.classList.remove('block__active');
+            headphone.classList.remove('block__active');
+            claqueta.classList.add('block__active');
+            break;
+        case 'menu__main__item__inner__blocks lupa':
+            gear.classList.remove('block__active');
+            star.classList.remove('block__active');
+            graphik.classList.remove('block__active');
+            claqueta.classList.remove('block__active');
+            headphone.classList.remove('block__active');
+            lupa.classList.add('block__active');
+            break;
+        case 'menu__main__item__inner__blocks headphone-menu':
+            gear.classList.remove('block__active');
+            star.classList.remove('block__active');
+            graphik.classList.remove('block__active');
+            claqueta.classList.remove('block__active');
+            lupa.classList.remove('block__active');
+            headphone.classList.add('block__active');
+            break;
+    }
     e.target.classList.add('active');
 }
 
 menuMainItemBlocks.addEventListener('click', menuMainItemBlocksEdition);
+
+// Slider Our Team
+// Получаем переменные
+let prev = document.getElementById("arrow-left"),
+    next = document.getElementById("arrow-right"),
+    sliderImg = document.getElementById("slider-img"),
+    imgItem = document.querySelectorAll('.slider-item'),
+    left = 0,
+    imgWidth = imgItem[0].clientWidth + 10,
+    maxWidthImg = 0;
+imgItem.forEach((e) => {
+    maxWidthImg += e.clientWidth + 10;
+});
+sliderImg.style.left = left + 'px';
+console.log(maxWidthImg);
+slideTo = (direction) => {
+    let count = 0;
+    if(document.body.clientWidth < 1246) {
+        count = 3;
+    } else {
+        count = 4;
+    }
+    if (direction === "left") left += imgWidth;
+    if (direction === "right") left -= imgWidth;
+    if (left < -maxWidthImg + imgWidth * count) left = 0;
+    if (left > 0) left = -maxWidthImg + imgWidth * count;
+
+    sliderImg.style.left = left + 'px';
+}
+
+prev.addEventListener("click", () => {
+    slideTo('left');
+});
+
+next.addEventListener("click", () => {
+    slideTo('right');
+});
