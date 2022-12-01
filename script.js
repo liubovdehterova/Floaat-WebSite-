@@ -116,8 +116,8 @@ function menuMainItemBlocksEdition(e) {
     menuMainItemBlocksInner.forEach(e => {
         e.classList.remove('active');
     });
-    switch(e.target.className) {
-        case 'menu__main__item__inner__blocks gear':
+    switch (e.target.getAttribute('title')) {
+        case 'gear':
             star.classList.remove('block__active');
             graphik.classList.remove('block__active');
             claqueta.classList.remove('block__active');
@@ -125,7 +125,7 @@ function menuMainItemBlocksEdition(e) {
             headphone.classList.remove('block__active');
             gear.classList.add('block__active');
             break;
-        case 'menu__main__item__inner__blocks star':
+        case 'star':
             gear.classList.remove('block__active');
             graphik.classList.remove('block__active');
             claqueta.classList.remove('block__active');
@@ -133,7 +133,7 @@ function menuMainItemBlocksEdition(e) {
             headphone.classList.remove('block__active');
             star.classList.add('block__active');
             break;
-        case 'menu__main__item__inner__blocks graphik':
+        case 'graphik':
             gear.classList.remove('block__active');
             star.classList.remove('block__active');
             claqueta.classList.remove('block__active');
@@ -141,7 +141,7 @@ function menuMainItemBlocksEdition(e) {
             headphone.classList.remove('block__active');
             graphik.classList.add('block__active');
             break;
-        case 'menu__main__item__inner__blocks claqueta-menu':
+        case 'claqueta-menu':
             gear.classList.remove('block__active');
             star.classList.remove('block__active');
             graphik.classList.remove('block__active');
@@ -149,7 +149,7 @@ function menuMainItemBlocksEdition(e) {
             headphone.classList.remove('block__active');
             claqueta.classList.add('block__active');
             break;
-        case 'menu__main__item__inner__blocks lupa':
+        case 'lupa':
             gear.classList.remove('block__active');
             star.classList.remove('block__active');
             graphik.classList.remove('block__active');
@@ -157,7 +157,7 @@ function menuMainItemBlocksEdition(e) {
             headphone.classList.remove('block__active');
             lupa.classList.add('block__active');
             break;
-        case 'menu__main__item__inner__blocks headphone-menu':
+        case 'headphone-menu':
             gear.classList.remove('block__active');
             star.classList.remove('block__active');
             graphik.classList.remove('block__active');
@@ -172,7 +172,6 @@ function menuMainItemBlocksEdition(e) {
 menuMainItemBlocks.addEventListener('click', menuMainItemBlocksEdition);
 
 // Slider Our Team
-// Получаем переменные
 let prev = document.getElementById("arrow-left"),
     next = document.getElementById("arrow-right"),
     sliderImg = document.getElementById("slider-img"),
@@ -184,11 +183,12 @@ imgItem.forEach((e) => {
     maxWidthImg += e.clientWidth + 10;
 });
 sliderImg.style.left = left + 'px';
-console.log(maxWidthImg);
 slideTo = (direction) => {
     let count = 0;
-    if(document.body.clientWidth < 1246) {
+    if (document.body.clientWidth < 1246 && document.body.clientWidth > 996) {
         count = 3;
+    } else if (document.body.clientWidth < 996) {
+        count = 2;
     } else {
         count = 4;
     }
