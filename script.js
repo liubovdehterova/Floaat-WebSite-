@@ -187,8 +187,10 @@ slideTo = (direction) => {
     let count = 0;
     if (document.body.clientWidth < 1246 && document.body.clientWidth > 996) {
         count = 3;
-    } else if (document.body.clientWidth < 996) {
+    } else if (document.body.clientWidth < 996 && document.body.clientWidth > 737) {
         count = 2;
+    } else if (document.body.clientWidth <= 737) {
+        count = 1;
     } else {
         count = 4;
     }

@@ -1262,6 +1262,7 @@ a {
         width: 100%;
         height: 600px;
         overflow-y: scroll;
+        padding-top: 40px;
     }
 
     .clients__info {
@@ -1271,23 +1272,29 @@ a {
     .clients__info__main__inner {
         margin-right: 15px;
     }
+
     .clients__info__main__inner:last-child {
         margin-right: 0;
     }
+
     .clients__info__inner__txt__title {
         margin: 0;
         font-size: 35px;
         line-height: 35px;
     }
+
     .clients__info__inner__txt {
         margin-top: 20px;
     }
+
     .menu__main__title {
         margin-top: 42px;
     }
+
     .menu__main__item__flex {
         width: 45%;
     }
+
     .menu {
         padding-bottom: 100px;
     }
@@ -1296,45 +1303,57 @@ a {
         max-width: 545px;
     }
 }
+
 @media only screen and (max-width: 889px) {
     .headphone {
         margin-left: 30px;
     }
+
     .torus3 {
         margin-left: 200px;
     }
+
     .menu__main__item {
         flex-wrap: wrap;
     }
+
     .menu__main__item__flex {
         width: 100%;
     }
+
     .menu__main__item__information {
         width: 100%;
     }
+
     .slider {
         margin: 110px 10px;
     }
 }
+
 @media only screen and (max-width: 799px) {
     .headphone {
         margin-left: 0;
     }
+
     .torus3 {
         margin-left: 160px;
     }
+
     .note {
         margin-right: 0;
     }
 }
+
 @media only screen and (max-width: 737px) {
     .header__main__text {
         top: 20%;
     }
+
     .header__main__text__animation:after {
         top: 65px;
         left: 15%;
     }
+
     .headphone img,
     .youtube img,
     .camera img,
@@ -1342,5 +1361,254 @@ a {
     .torus img,
     .note img {
         width: 100px;
+    }
+
+    .slider {
+        max-width: 272px;
+    }
+
+    .header__main__text__title {
+        font-size: 110px;
+    }
+
+    .header__main__text__animation:after {
+        width: 500px;
+        height: 199px;
+    }
+}
+
+@media only screen and (max-width: 629px) {
+    .torus3 {
+        margin-left: 110px;
+    }
+
+    .torus3 img {
+        width: 100px;
+    }
+
+    .header__main__text__title {
+        font-size: 90px;
+        line-height: 135px;
+    }
+
+    .header__main__text__animation:after {
+        width: 410px;
+        height: 160px;
+    }
+
+    .header__main__text__animation:after {
+        top: 40px;
+        left: 18%;
+    }
+
+    .note img {
+        width: 75px;
+    }
+
+    .camera {
+        margin-left: 0;
+    }
+
+    .menu__main__item__flex {
+        justify-content: center;
+    }
+
+    .menu__main__item__inner {
+        margin: 0 5px 7px;
+    }
+}
+
+@media only screen and (max-width: 547px) {
+    .clients__info__main__inner:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .clients__info__main__inner:last-child .clients__info__main__card:first-child {
+        margin-right: 15px;
+    }
+
+    .clients__info__main__card {
+        margin-left: 15px;
+    }
+
+    .torus3 img {
+        width: 85px;
+    }
+
+    .torus3 {
+        margin-left: 55px;
+    }
+
+    .header__main__text__title {
+        font-size: 70px;
+        line-height: 120px;
+    }
+
+    .header__main__text__subtitle {
+        font-size: 10px;
+    }
+
+    .header__main__text__animation:after {
+        width: 320px;
+        height: 125px;
+    }
+
+    .clients__info__inner__txt__title p {
+        display: inline-block;
+    }
+
+    .clients__info__inner__txt__title {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .youtube {
+        margin-left: 50px;
+    }
+
+    .headphone img,
+    .youtube img,
+    .camera img,
+    .claqueta img,
+    .torus img,
+    .note img {
+        width: 85px;
+    }
+}
+
+@media only screen and (max-width: 463px) {
+    .slider-item img {
+        width: 200px;
+    }
+
+    .slider {
+        max-width: 210px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .clients__info__main {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .clients__info__main__inner:last-child {
+        display: block;
+    }
+
+    .header__main__text__title {
+        font-size: 55px;
+        line-height: 95px;
+    }
+
+    .header__main__text__animation:after {
+        width: 245px;
+        height: 95px;
+    }
+
+    .claqueta {
+        margin-top: 110px;
+        margin-right: 20px;
+    }
+
+    .torus {
+        margin-top: 190px;
+        right: 20px;
+    }
+
+    .torus3 {
+        margin-left: 20px;
+    }
+
+    .youtube {
+        margin-left: 40px;
+    }
+
+    .clients__info__logo {
+        width: 55%;
+    }
+
+    .clients__info__main__inner:nth-child(2) {
+        margin-top: 0;
+    }
+
+    .clients__info__main__card--item-img-square {
+        width: 160px;
+        height: 162px;
+    }
+
+    .slider {
+        margin: 90px 0;
+    }
+
+    .slider__team__title {
+        font-size: 32px;
+    }
+
+    .slider-arrow-inner {
+        font-size: 10px;
+        width: 65px;
+        height: 65px;
+    }
+
+    .clients__info__main__card:last-child {
+        padding-bottom: 25px;
+    }
+
+    .menu__main__item__inner__blocks {
+        width: 100px;
+        height: 100px;
+    }
+
+    .menu__main__item__information__inner {
+        padding: 60px 0;
+    }
+
+    .menu__main__item__information__inner__title {
+        font-size: 26px;
+    }
+
+    .clients {
+        height: 100vh;
+    }
+
+    .clients__info__main__card:last-child {
+        margin-bottom: 0;
+    }
+
+    .clients__info__main {
+        height: 285px;
+    }
+
+    .menu__main__title {
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .menu__header .header__top__logo__link,
+    .menu__header__contacts__link,
+    .menu__header__contacts__dot {
+        padding: 10px 0 0 0;
+    }
+    .footer__contact {
+        padding: 20px 0;
+    }
+    .team__footer:after {
+        bottom: 60px;
+        right: -30px;
+    }
+    .slider {
+        margin: 60px 0;
+    }
+    .slider__team__inner:before {
+        left: -35px;
+        bottom: 0;
+    }
+    .slider__team__inner:after {
+        right: 60px;
+        top: 65px;
     }
 }
